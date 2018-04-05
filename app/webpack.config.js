@@ -7,7 +7,8 @@ config = {
   // 配置打包结果 Object
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'build.js'
+    filename: 'build.js',
+    publicPath: 'build'
   },
 
   // 定义对模块的处理逻辑 Object
@@ -34,6 +35,13 @@ config = {
   resolve: {
     // 引入文件时自动识别一下文件扩展名，即引入时不同带后缀名
     extensions: ['.js', '.css', '.jsx']
+  },
+
+  // webpack-dev-server 配置
+  devServer: {
+    // 热加载，命令行必须输入--hot
+    hot: true,
+
   }
 }
 module.exports = config

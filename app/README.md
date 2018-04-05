@@ -115,8 +115,13 @@ module.exports = config`
 - 轻量级服务器
 - **修改文件源码**后，**自动刷新页面**就能把修改页面同步到页面上
 - 安装模块
-  + `cnpm i webpack-dev-server@3.0.0 -g` 全局安装
-  + `cnpm i webpack-dev-server@3.0.0 --save-dev` 依赖写入
+  + `cnpm i webpack-dev-server@3.0.0-alpha6 -g` 全局安装
+  + `cnpm i webpack-dev-server@3.0.0-alpha6 --save-dev` 依赖写入
 - 使用命令
   + `webpack-dev-server --hot --inline` 自动刷新
   + 出错时：`webpack-dev-server --port 3600`
+
+  - 不能自动更新原因：
+    + 因为 webpack-dev-server 启动之后在服务器上运行，修改代码之后打包生成的页面不是原来指向build/build.js 而是在内存中打包生成 build.js 文件，所以在 webpack.config.js 文件的 output 对象配置里加上 `publicPath: 'build'` 配置，这样 index.html 引用的地址 build/build.js 的第一个 build 指的就是 publicPath 指向的内在所在目录，切build.js 文件是内存里打包生成的文件，不是 build/build.js 文件。这个文件不会有打包变化，因为所有修改代码操作打包生成的 js 文件都在内存里生成，并不会保存到这是build/buid.js 文件里保存。这一点请注意。
+
+  + --content-base 可以修改服务器访问根目录位置

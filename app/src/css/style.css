@@ -4,4 +4,5 @@ h1 {
   font-size: 50px;
   border: 2px solid black;
   background: yellow;
+  outline:10px solid green; 
 }

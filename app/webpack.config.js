@@ -29,6 +29,11 @@ config = {
         // include: Sring|Array,
       }
     ]
+  },
+  // 解析设置
+  resolve: {
+    // 引入文件时自动识别一下文件扩展名，即引入时不同带后缀名
+    extensions: ['.js', '.css', '.jsx']
   }
 }
 module.exports = config

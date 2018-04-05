@@ -183,7 +183,7 @@ exports = module.exports = __webpack_require__(0)();
 exports.i(__webpack_require__(5), "");
 
 // module
-exports.push([module.i, "h1 {\r\n  color: red;\r\n  font-size: 50px;\r\n  border: 2px solid black;\r\n  background: yellow;\r\n}", ""]);
+exports.push([module.i, "h1 {\r\n  color: red;\r\n  font-size: 50px;\r\n  border: 2px solid black;\r\n  background: yellow;\r\n  outline:10px solid green; \r\n}", ""]);
 
 // exports
 

@@ -1,4 +1,5 @@
 var path = require('path');
+var htmlWebpacPlugin = require('html-webpack-plugin')
 
 config = {
   // 打包入口文件 String|Object
@@ -8,7 +9,7 @@ config = {
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'build.js',
-    publicPath: 'build'
+    //publicPath: 'build'
   },
 
   // 定义对模块的处理逻辑 Object
@@ -40,8 +41,14 @@ config = {
   // webpack-dev-server 配置
   devServer: {
     // 热加载，命令行必须输入--hot
-    hot: true,
-
-  }
+    // hot: true,
+    // inline: true
+  },
+  plugins: [
+    new htmlWebpacPlugin({
+      title: 'welcome to my homepage',
+      //chunks: ['index']
+    })
+  ]
 }
 module.exports = config

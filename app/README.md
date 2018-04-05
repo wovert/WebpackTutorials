@@ -110,3 +110,13 @@ config = {
 module.exports = config`
 
 2. 命令行输入打包命令 `webpack` 
+
+## webpack-dev-server 模块
+- 轻量级服务器
+- **修改文件源码**后，**自动刷新页面**就能把修改页面同步到页面上
+- 安装模块
+  + `cnpm i webpack-dev-server@3.0.0 -g` 全局安装
+  + `cnpm i webpack-dev-server@3.0.0 --save-dev` 依赖写入
+- 使用命令
+  + `webpack-dev-server --hot --inline` 自动刷新
+  + 出错时：`webpack-dev-server --port 3600`

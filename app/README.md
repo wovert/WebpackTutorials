@@ -66,3 +66,42 @@ document.body.innerHTML = '<h1>' + str + '</h1>';`
 - 使用方法
   + `require('style-loader!css-loader!./css/style.css')`
   + style!css! **从右到左解析处理**，先查找所有 css 文件，然后把样式放到 style 标签里面
+
+## 打包
+> 把各种资源(脚本文件，样式文件，图片文件等)打包成一个文件，让客户端加载资源文件的时候仅加载这个打包文件。这样做的好处是减少客户端与服务器端交互压力，优化了加载资源过程。缺点是因为是用 JS 解析生成各种内容，因此对于 SEO 优化来说是致命的。
+
+## webpack 配置
+- 因为每次打包都需要在命令行上输入 `webpack 源码文件 目标生成文件`，因此可以通过webpack 配置文件来自动打包生成。
+
+1. 在项目目录下创建 `webpack.config.js` 文件
+- 文件内容如下：
+`var path = require('path');
+config = {
+  // 打包入口文件 String|Object
+  entry: './src/index.js',
+
+  // 配置打包结果 Object
+  output: {
+    path: path.join(__dirname, 'build'),
+    filename: 'build.js'
+  },
+  // 定义对模块的处理逻辑 Object
+  module: {
+    // 定义一系列的加载器 Array
+    loaders: [
+      {
+        // 正则，匹配到的文件后缀名
+        test: /.css$/,
+        // 处理匹配到的文件
+        loaders: ["style-loader", "css-loader"],
+        // 排除的目录 String|Array
+        exclude: '/node_modules/'
+        // 包含的目录 String | Array
+        // include: Sring|Array,
+      }
+    ]
+  }
+}
+module.exports = config`
+
+2. 命令行输入打包命令 `webpack` 

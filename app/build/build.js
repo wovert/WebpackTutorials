@@ -67,8 +67,17 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var str = __webpack_require__(1);
-document.body.innerHTML = '<h1>' + str + '</h1>';
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// CMD
+// var str = require('./app.js');
+// document.body.innerHTML = '<h1>' + str + '</h1>';
+
+// ADM
+!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(1)], __WEBPACK_AMD_DEFINE_RESULT__ = (function(str){
+  document.body.innerHTML = '<h1>AMD: ' + str + '</h1>';
+}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
+
+
 
 /***/ }),
 /* 1 */

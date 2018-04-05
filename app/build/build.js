@@ -60,74 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// CMD
-var str = __webpack_require__(1);
-document.body.innerHTML = '<h1>' + str + '</h1>';
-__webpack_require__(2);
-
-
-// ADM
-// define(['./app.js'], function(str){
-//   document.body.innerHTML = '<h1>AMD: ' + str + '</h1>';
-// })
-
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-module.exports = "Welcome to wovert.com"
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(3);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(5)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/_css-loader@0.23.1@css-loader/index.js!./style.css", function() {
-			var newContent = require("!!../../node_modules/_css-loader@0.23.1@css-loader/index.js!./style.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(4)();
-// imports
-
-
-// module
-exports.push([module.i, "h1 {\r\n  color: red;\r\n  font-size: 50px;\r\n  border: 2px solid black;\r\n}", ""]);
-
-// exports
-
-
-/***/ }),
-/* 4 */
 /***/ (function(module, exports) {
 
 /*
@@ -183,7 +120,87 @@ module.exports = function() {
 
 
 /***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// CMD
+var str = __webpack_require__(2);
+document.body.innerHTML = '<h1>' + str + '</h1>';
+
+// reset.css 在 style.css 通过import导入在这里不同导入
+// require('style-loader!css-loader!./css/reset.css');
+__webpack_require__(3);
+
+
+// ADM
+// define(['./app.js'], function(str){
+//   document.body.innerHTML = '<h1>AMD: ' + str + '</h1>';
+// })
+
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = "Welcome to wovert.com"
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(4);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(6)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/_css-loader@0.23.1@css-loader/index.js!./style.css", function() {
+			var newContent = require("!!../../node_modules/_css-loader@0.23.1@css-loader/index.js!./style.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)();
+// imports
+exports.i(__webpack_require__(5), "");
+
+// module
+exports.push([module.i, "h1 {\r\n  color: red;\r\n  font-size: 50px;\r\n  border: 2px solid black;\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
 /* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)();
+// imports
+
+
+// module
+exports.push([module.i, "* {\r\n  margin:0;\r\n  padding:0\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports) {
 
 /*

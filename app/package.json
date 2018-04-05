@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  },
+  "name": "app",
+  "version": "1.0.0",
+  "description": "webpack tutorials",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "webpack"
+  ],
+  "author": "wovert",
+  "license": "ISC"
+}

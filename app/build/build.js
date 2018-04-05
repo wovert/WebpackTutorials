@@ -65,9 +65,16 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var str = __webpack_require__(1);
+document.body.innerHTML = '<h1>' + str + '</h1>';
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports) {
 
-document.body.innerHTML = '<div>Welcome to Wovert.com</div>';
+module.exports = "Welcome to wovert.com"
 
 /***/ })
 /******/ ]);
